@@ -29,8 +29,9 @@ class Route
 
     private function pathinfoUrl()
     {
-        $pathinfo = isset($_SERVER['PATH_INFO']) ? trim($_SERVER['PATH_INFO'], '/') : '';
-        $pathinfo = explode('/', $pathinfo);
+        $pathinfo = (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] != '/') ? trim($_SERVER['PATH_INFO'], '/') : null;
+
+        $pathinfo = empty($pathinfo[0]) ? null : explode('/', $pathinfo);
 
         // 设置模块
         if (isset($pathinfo[0]) && !empty($pathinfo[0])) {

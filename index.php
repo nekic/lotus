@@ -30,4 +30,3 @@ require_once FRAMEWORK . 'Framework.class.php';
 // 启动框架
 \Framework\Framework::run();
 
-p((new \Framework\Core\Route())->request);
