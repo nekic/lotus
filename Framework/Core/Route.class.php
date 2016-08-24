@@ -25,6 +25,7 @@ class Route
             default:
                 $this->pathinfoUrl();
         }
+
     }
 
     private function pathinfoUrl()
@@ -58,12 +59,10 @@ class Route
             $this->request['action'] = 'index';
         }
 
-        $this->request['params'] = null;
-
-        // 获取 GET 参数
+        // 设置 GET 参数
         if($len = count($pathinfo)) {
                 for($i = 1; $i <= $len; $i += 2) {
-                    $this->request['params'][$pathinfo[2+$i]] = isset($pathinfo[2+$i+1]) ? $pathinfo[2+$i+1] : null;
+                    $_GET[$pathinfo[2+$i]] = isset($pathinfo[2+$i+1]) ? $pathinfo[2+$i+1] : null;
                 }
         }// end if
     }

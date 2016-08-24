@@ -24,3 +24,13 @@ function C($configName)
     $configName = ucwords($configName);
     return isset($configs[$configName]) ? $configs[$configName] : null;
 }
+
+/**
+ * 运行时动态定义常量
+ */
+function D(array $arr)
+{
+    foreach ($arr as $name => $value) {
+        define(strtoupper($name), $value);
+    }
+}

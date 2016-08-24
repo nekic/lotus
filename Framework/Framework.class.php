@@ -46,6 +46,9 @@ class Framework
     {
         $route = new \Framework\Core\Route();
         $requst = $route->getRequest();
+        // 定义模块、控制器、操作常量
+        D($requst);
+        // 组织 控制器名
         $controllerName = '\\Application\\' . $requst['module'] . '\\Controller\\' . $requst['controller'] . 'Controller';
         $controller = new $controllerName();
         $controller->$requst['action']();
