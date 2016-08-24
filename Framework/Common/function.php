@@ -20,7 +20,7 @@ function p($var)
  */
 function C($configName)
 {
-    $configs = include_once __DIR__ . '/config.php';
+    $configs = include __DIR__ . '/config.php';
     $configName = ucwords($configName);
     return isset($configs[$configName]) ? $configs[$configName] : null;
 }
