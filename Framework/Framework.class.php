@@ -12,6 +12,25 @@ class Framework
      */
     public static function run()
     {
-        echo 'Ok';
+        // 自动加载
+        self::autoload();
+    }
+
+    public static function autoload()
+    {
+        spl_autoload_register(array(__CLASS__, 'load'));
+    }
+
+    /**
+     * 加载函数
+     * @param $className 加载的类名
+     */
+    private static function load($className)
+    {
+        // className = '\Framework\Core\Route'
+        $file = ROOT . str_replace('\\', '/', $className) . '.class.php';
+        if (is_file($file)) {
+            include $file;
+        }
     }
 }
