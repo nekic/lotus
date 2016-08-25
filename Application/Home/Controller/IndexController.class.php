@@ -17,5 +17,6 @@ class IndexController extends Controller
 //        $this->assign('data', $data);
 //        $this->assign('name',$name);
 //        $this->display();
+        dump($_SERVER);
     }
 }

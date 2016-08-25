@@ -12,10 +12,14 @@ define('FRAMEWORK', ROOT . 'Framework' . DS);
 define('COMMON', FRAMEWORK . 'Common' . DS);
 define('APP', ROOT . 'Application' . DS);
 
+include "vendor/autoload.php";
 // 是否开启调试模式
 define('DEBUG', true);
 
 if (DEBUG) {
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
     ini_set('display_error', 'On');
 } else {
     ini_set('display_error', 'Off');

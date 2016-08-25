@@ -1,0 +1,12 @@
+{
+  "name": "lotus",
+  "description": "一个简陋的 php mvc 框架",
+  "type": "Framework",
+  "keywords": ["PHP", "MVC", "FRAMEWORK"],
+
+  "require": {
+    "php": ">= 5.3.0",
+    "filp/whoops":"*",
+    "symfony/var-dumper": "*"
+  }
+}
