@@ -18,6 +18,10 @@ class Framework
         self::despatch();
     }
 
+
+    /**
+     * 注册自动加载
+     */
     public static function autoload()
     {
         spl_autoload_register(array(__CLASS__, 'load'));
@@ -33,8 +37,11 @@ class Framework
         // className = '\Framework\Core\Route'
         $file = ROOT . str_replace('\\', '/', $className) . '.class.php';
 
+
         if (is_file($file)) {
             include $file;
+        } else {
+            throw new \Exception("需要加载的文件没有找到" . $file);
         }
 
     }

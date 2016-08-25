@@ -8,12 +8,14 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $model = new Model();
-        $sql = "show tables;";
-        $result = $model->query($sql);
-        $data = $result->fetchAll();
-
-        $this->assign('data', $data);
-        $this->display('User/edit');
+//        $model = new Model();
+//        $sql = "show tables;";
+//        $result = $model->query($sql);
+//        $data = $result->fetchAll();
+//        $name = "nekic";
+//
+//        $this->assign('data', $data);
+//        $this->assign('name',$name);
+//        $this->display();
     }
 }
