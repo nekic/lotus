@@ -17,4 +17,8 @@ return array(
     // 日志配置
     'LOG_DRIVE' => 'file', // 日志存储方式, 值 file 以文件方式 , db 以数据库方式
     'LOG_DIR' => 'Application/Runtime/Log', // 文件方式存储时日志目录, 相对路径
+
+    // 模板引擎
+    'TMPL_TYPE' => 'twig', // 模板引擎类型 php, twig, smarty
+    'TMPL_CACHEDIR' => 'Application/Runtime/Cache', // 缓存文件目录
 );

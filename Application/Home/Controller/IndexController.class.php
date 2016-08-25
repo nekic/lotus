@@ -17,7 +17,10 @@ class IndexController extends Controller
 //        $this->assign('data', $data);
 //        $this->assign('name',$name);
 //        $this->display();
-        $model = new Model();
-        dump($model);
+//        $model = new Model();
+//        dump($model);
+        $data = "hello twig";
+        $this->assign($data);
+        $this->display();
     }
 }
