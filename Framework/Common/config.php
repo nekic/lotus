@@ -3,7 +3,7 @@ return array(
     // 配置项=>值
 
     // URL 模式
-    'URL_MODE' => 'pathinfo', // 1 pathinfo, 2 普通url
+    'URL_MODE' => 'pathinfo', // 1 pathinfo, 2 normal 普通 url
 
     // 数据库配置
     'DB_TYPE' => 'mysql', // 数据库类型
@@ -21,4 +21,10 @@ return array(
     // 模板引擎
     'TMPL_TYPE' => 'twig', // 模板引擎类型 php, twig, smarty
     'TMPL_CACHEDIR' => 'Application/Runtime/Cache', // 缓存文件目录
+
+    // 默认请求分发参数
+    'DEFAULT_MODULE' => 'Home', // 默认请求模块
+    'DEFAULT_CONTROLLER' => "Index", // 默认请求控制器
+    'DEFAULT_ACTION' => 'index', // 默认请求操作
+
 );

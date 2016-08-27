@@ -28,8 +28,7 @@ class __TwigTemplate_d8e557aad0136582bf41ebed65f1a9f9726f0c936d9eedd61dd27bdcc52
     public function block_content($context, array $blocks = array())
     {
         // line 3
-        echo twig_escape_filter($this->env, (isset($context["data"]) ? $context["data"] : null), "html", null, true);
-        echo "
+        echo "123123213
 ";
     }
 
@@ -50,5 +49,5 @@ class __TwigTemplate_d8e557aad0136582bf41ebed65f1a9f9726f0c936d9eedd61dd27bdcc52
 }
 /* {% extends "layout.html" %}*/
 /* {% block content %}*/
-/* {{ data }}*/
+/* 123123213*/
 /* {% endblock %}*/

@@ -1,8 +1,12 @@
 <?php
 /**
- * 全局自定义函数
+ * 全局函数
  */
 
+/**
+ * 输出某个变量信息, 只是美化了输出界面
+ * @param mixed $var 要输出的变量
+ */
 function p($var)
 {
     if (is_bool($var)) {
@@ -16,21 +20,37 @@ function p($var)
 }
 
 /**
- * 获取配置文件值
+ * 获取配置项的值
+ * @param string $configName 要获取配置项的名称, 大小写不敏感
  */
 function C($configName)
 {
     $configs = include __DIR__ . '/config.php';
-    $configName = ucwords($configName);
+    $configName = strtoupper($configName);
     return isset($configs[$configName]) ? $configs[$configName] : null;
 }
 
 /**
- * 运行时动态定义常量
+ * 程序启动后根据环境动态定义常量
+ * @param  array $arr 格式为 "常量名"=>"值" 对, 支持二维数组形式
+ *
  */
-function D(array $arr)
+function D(array $arrs)
 {
-    foreach ($arr as $name => $value) {
+    if(empty($arrs)) {
+        return false;
+    }
+
+    if(isset($arrs[0])) { // 二维
+        foreach ($arrs as $arr) {
+            foreach ($arr as $name => $value) {
+                define(strtoupper($name), $value);
+            }
+        }
+        return;
+    }
+
+    foreach ($arrs as $name => $value) {
         define(strtoupper($name), $value);
     }
 }
